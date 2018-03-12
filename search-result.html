@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>My Wish List | Metronic Shop UI</title>
+  <title>Search result | Metronic Shop UI</title>
 
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,8 +22,7 @@
 
   <link rel="shortcut icon" href="favicon.ico">
 
-
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css"> 
         
   <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -330,7 +329,7 @@
                 <li><a href="shop-index-header-fix.html">Home Header Fixed</a></li>
                 <li><a href="shop-index-light-footer.html">Home Light Footer</a></li>
                 <li><a href="shop-product-list.html">Product List</a></li>
-                <li><a href="shop-search-result.html">Search Result</a></li>
+                <li class="active"><a href="shop-search-result.html">Search Result</a></li>
                 <li><a href="shop-item.html">Product Page</a></li>
                 <li><a href="shop-shopping-cart-null.html">Shopping Cart (Null Cart)</a></li>
                 <li><a href="shop-shopping-cart.html">Shopping Cart</a></li>
@@ -338,7 +337,7 @@
                 <li><a href="shop-about.html">About</a></li>
                 <li><a href="shop-contacts.html">Contacts</a></li>
                 <li><a href="shop-account.html">My account</a></li>
-                <li class="active"><a href="shop-wishlist.html">My Wish List</a></li>
+                <li><a href="shop-wishlist.html">My Wish List</a></li>
                 <li><a href="shop-goods-compare.html">Product Comparison</a></li>
                 <li><a href="shop-standart-forms.html">Standart Forms</a></li>
                 <li><a href="shop-faq.html">FAQ</a></li>
@@ -372,88 +371,275 @@
       </div>
     </div>
     <!-- Header END -->
-    
+
     <div class="main">
       <div class="container">
         <ul class="breadcrumb">
             <li><a href="index.html">Home</a></li>
             <li><a href="">Store</a></li>
-            <li class="active">My Wish List</li>
+            <li class="active">Search result</li>
         </ul>
         <!-- BEGIN SIDEBAR & CONTENT -->
         <div class="row margin-bottom-40">
           <!-- BEGIN SIDEBAR -->
           <div class="sidebar col-md-3 col-sm-5">
-            <ul class="list-group margin-bottom-25 sidebar-menu">
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Ladies</a></li>
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Kids</a></li>
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Accessories</a></li>
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Sports</a></li>
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Brands</a></li>
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Electronics</a></li>
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Home & Garden</a></li>
-              <li class="list-group-item clearfix"><a href="shop-product-list.html"><i class="fa fa-angle-right"></i> Custom Link</a></li>
-            </ul>
+            <div class="sidebar-filter margin-bottom-25">
+              <h2>Search categories</h2>
+              <h3>Availability</h3>
+              <div class="checkbox-list">
+                <label><input type="checkbox"> Not Available (3)</label>
+                <label><input type="checkbox"> In Stock (26)</label>
+              </div>
+
+              <h3>Price</h3>
+              <p>
+                <label for="amount">Range:</label>
+                <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+              </p>
+              <div id="slider-range"></div>
+            </div>
+
+            <div class="sidebar-products clearfix">
+              <h2>Bestsellers</h2>
+              <div class="item">
+                <a href="shop-item.html"><img src="assets/pages/img/products/k1.jpg" alt="Some Shoes in Animal with Cut Out"></a>
+                <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
+                <div class="price">$31.00</div>
+              </div>
+              <div class="item">
+                <a href="shop-item.html"><img src="assets/pages/img/products/k4.jpg" alt="Some Shoes in Animal with Cut Out"></a>
+                <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
+                <div class="price">$23.00</div>
+              </div>
+              <div class="item">
+                <a href="shop-item.html"><img src="assets/pages/img/products/k3.jpg" alt="Some Shoes in Animal with Cut Out"></a>
+                <h3><a href="shop-item.html">Some Shoes in Animal with Cut Out</a></h3>
+                <div class="price">$86.00</div>
+              </div>
+            </div>
           </div>
           <!-- END SIDEBAR -->
-
           <!-- BEGIN CONTENT -->
           <div class="col-md-9 col-sm-7">
-            <h1>My Wish List</h1>
-            <div class="goods-page">
-              <div class="goods-data clearfix">
-                <div class="table-wrapper-responsive">
-                <table summary="Shopping cart">
-                  <tr>
-                    <th class="goods-page-image">Image</th>
-                    <th class="goods-page-description">Description</th>
-                    <th class="goods-page-stock">Stock</th>
-                    <th class="goods-page-price" colspan="2">Unit price</th>
-                  </tr>
-                  <tr>
-                    <td class="goods-page-image">
-                      <a href="javascript:;"><img src="assets/pages/img/products/model3.jpg" alt="Berry Lace Dress"></a>
-                    </td>
-                    <td class="goods-page-description">
-                      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
-                      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
-                      <em>More info is here</em>
-                    </td>
-                    <td class="goods-page-stock">
-                      In Stock
-                    </td>
-                    <td class="goods-page-price">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="del-goods-col">
-                      <a class="del-goods" href="javascript:;">&nbsp;</a>
-                      <a class="add-goods" href="javascript:;">&nbsp;</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="goods-page-image">
-                      <a href="javascript:;"><img src="assets/pages/img/products/model4.jpg" alt="Berry Lace Dress"></a>
-                    </td>
-                    <td class="goods-page-description">
-                      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
-                      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
-                      <em>More info is here</em>
-                    </td>
-                    <td class="goods-page-stock">
-                      In Stock
-                    </td>
-                    <td class="goods-page-price">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="del-goods-col">
-                      <a class="del-goods" href="javascript:;">&nbsp;</a>
-                      <a class="add-goods" href="javascript:;">&nbsp;</a>
-                    </td>
-                  </tr>
-                </table>
+            <div class="content-search margin-bottom-20">
+              <div class="row">
+                <div class="col-md-6">
+                  <h1>Search result for <em>shoes</em></h1>
+                </div>
+                <div class="col-md-6">
+                  <form action="#">
+                    <div class="input-group">
+                      <input type="text" placeholder="Search again" class="form-control">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                      </span>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
+            <div class="row list-view-sorting clearfix">
+              <div class="col-md-2 col-sm-2 list-view">
+                <a href="javascript:;"><i class="fa fa-th-large"></i></a>
+                <a href="javascript:;"><i class="fa fa-th-list"></i></a>
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <div class="pull-right">
+                  <label class="control-label">Show:</label>
+                  <select class="form-control input-sm">
+                    <option value="#?limit=24" selected="selected">24</option>
+                    <option value="#?limit=25">25</option>
+                    <option value="#?limit=50">50</option>
+                    <option value="#?limit=75">75</option>
+                    <option value="#?limit=100">100</option>
+                  </select>
+                </div>
+                <div class="pull-right">
+                  <label class="control-label">Sort&nbsp;By:</label>
+                  <select class="form-control input-sm">
+                    <option value="#?sort=p.sort_order&amp;order=ASC" selected="selected">Default</option>
+                    <option value="#?sort=pd.name&amp;order=ASC">Name (A - Z)</option>
+                    <option value="#?sort=pd.name&amp;order=DESC">Name (Z - A)</option>
+                    <option value="#?sort=p.price&amp;order=ASC">Price (Low &gt; High)</option>
+                    <option value="#?sort=p.price&amp;order=DESC">Price (High &gt; Low)</option>
+                    <option value="#?sort=rating&amp;order=DESC">Rating (Highest)</option>
+                    <option value="#?sort=rating&amp;order=ASC">Rating (Lowest)</option>
+                    <option value="#?sort=p.model&amp;order=ASC">Model (A - Z)</option>
+                    <option value="#?sort=p.model&amp;order=DESC">Model (Z - A)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- BEGIN PRODUCT LIST -->
+            <div class="row product-list">
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model1.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                      <a href="assets/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model2.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                      <a href="assets/pages/img/products/model2.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model6.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                      <a href="assets/pages/img/products/model6.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress 2</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+            </div>
+            <div class="row product-list">
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model4.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                        <a href="assets/pages/img/products/model4.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model5.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                        <a href="assets/pages/img/products/model5.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                  <div class="sticker sticker-new"></div>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model3.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                        <a href="assets/pages/img/products/model3.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+            </div>
+            <div class="row product-list">
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model7.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                        <a href="assets/pages/img/products/model7.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model1.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                        <a href="assets/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+              <!-- PRODUCT ITEM START -->
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="product-item">
+                  <div class="pi-img-wrapper">
+                    <img src="assets/pages/img/products/model2.jpg" class="img-responsive" alt="Berry Lace Dress">
+                    <div>
+                        <a href="assets/pages/img/products/model2.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                    </div>
+                  </div>
+                  <h3><a href="shop-item.html">Berry Lace Dress</a></h3>
+                  <div class="pi-price">$29.00</div>
+                  <a href="javascript:;" class="btn btn-default add2cart">Add to cart</a>
+                  <div class="sticker sticker-sale"></div>
+                </div>
+              </div>
+              <!-- PRODUCT ITEM END -->
+            </div>
+            <!-- END PRODUCT LIST -->
+            <!-- BEGIN PAGINATOR -->
+            <div class="row">
+              <div class="col-md-4 col-sm-4 items-info">Items 1 to 9 of 10 total</div>
+              <div class="col-md-8 col-sm-8">
+                <ul class="pagination pull-right">
+                  <li><a href="javascript:;">&laquo;</a></li>
+                  <li><a href="javascript:;">1</a></li>
+                  <li><span>2</span></li>
+                  <li><a href="javascript:;">3</a></li>
+                  <li><a href="javascript:;">4</a></li>
+                  <li><a href="javascript:;">5</a></li>
+                  <li><a href="javascript:;">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- END PAGINATOR -->
           </div>
           <!-- END CONTENT -->
         </div>
@@ -642,7 +828,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-9">
-                  <h2>Cool green dress with red bell</h2>
+                  <h1>Cool green dress with red bell</h1>
                   <div class="price-availability-block clearfix">
                     <div class="price">
                       <strong><span>$</span>47.00</strong>
@@ -659,7 +845,7 @@ Nostrud duis molestie at dolore.</p>
                   <div class="product-page-options">
                     <div class="pull-left">
                       <label class="control-label">Size:</label>
-                      <select class="form-control">
+                      <select class="form-control input-sm">
                         <option>L</option>
                         <option>M</option>
                         <option>XL</option>
@@ -667,7 +853,7 @@ Nostrud duis molestie at dolore.</p>
                     </div>
                     <div class="pull-left">
                       <label class="control-label">Color:</label>
-                      <select class="form-control">
+                      <select class="form-control input-sm">
                         <option>Red</option>
                         <option>Blue</option>
                         <option>Black</option>
@@ -676,7 +862,7 @@ Nostrud duis molestie at dolore.</p>
                   </div>
                   <div class="product-page-cart">
                     <div class="product-quantity">
-                        <input id="product-quantity2" type="text" value="1" readonly class="form-control input-sm">
+                        <input id="product-quantity" type="text" value="1" readonly name="product-quantity" class="form-control input-sm">
                     </div>
                     <button class="btn btn-primary" type="submit">Add to cart</button>
                     <a href="shop-item.html" class="btn btn-default">More details</a>
