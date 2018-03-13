@@ -2,19 +2,44 @@ let tagCollection = document.getElementsByClassName('category');
 giveEventTag(tagCollection);//Función que asigna evento click a cada enlace de categoria.
 
 const showProducts = (arrayProducts) => {
-console.log(arrayProducts[0]);
-let id = arrayProducts[0].id;
-let image = arrayProducts[0].thumbnail;
-let name = arrayProducts[0].title;
-let price = arrayProducts[0].price;
-let originalPrice = arrayProducts[0].original_price;
-let sold = arrayProducts[0].sold_quantity;
-let rating = arrayProducts[0].reviews.rating_average;
-console.log(image, name, price,originalPrice);
+  // console.log(arrayProducts);
+  const productsItems = arrayProducts;
+  // console.log(productsItems);
+  productsItems.forEach(element => {
+    const id = element.id;
+    const image = element.thumbnail;
+    // console.log(image);
+    
 
-drawProducts(id, image, name, price, rating, sold, originalPrice);
+    
+    const name = element.title;
+    // console.log(name);
+    const separador= " ";
+    const limite = 4;
+    const arrayofText = name.split(separador, limite);
+    console.log(arrayofText);
 
+    const chainText = arrayofText.join(' ');
+    console.log(chainText);
+    
+    
+    const price = element.price;
+    const currency = element.currency_id;
+    const originalPrice = element.original_price;
+    const sold = element.sold_quantity;
+    const rating = element.reviews.rating_average;
+    // console.log(image, name, price,originalPrice);
+    drawProducts(id, image, name, price, rating, sold, originalPrice, currency, chainText);
+
+  });
+     
 }
+
+
+
+ 
+
+
 
 //*Funcionamiento del carrito de compras*////
 
