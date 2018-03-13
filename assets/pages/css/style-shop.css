@@ -42,10 +42,13 @@ Header and header elements
 .ecommerce .site-logo {
 	padding-top: 28px;
 	padding-bottom: 27px;
+	width: 100px;
 }
 .ecommerce .reduce-header .site-logo {
 	padding-top: 16px;
 	padding-bottom: 18px;
+	width: 100px;
+
 }
 
 .ecommerce .header-navigation li.menu-search {

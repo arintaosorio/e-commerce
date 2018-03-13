@@ -18,7 +18,7 @@ for (var i = 0; i < 10; i++) {
         <h3><a href="#">${name}</a></h3>
         <div data-product-id=${id} class="pi-price">${price}</div>
         <a  href="javascript:;" class="btn btn-default add2cart btnAddRemove">Add to cart</a>
-        <div class="sticker sticker-sale"></div>
+        
         </div>
         </div></div></div>
         `;
