@@ -27,6 +27,7 @@ const drawProducts = (id, image, name, price, rating, sold, originalPrice,arrayP
     }
    //console.log(templateProduct);
      contentProducts.innerHTML = templateProduct;
+
 }//Fin de función drawProducts(array).
 
 
