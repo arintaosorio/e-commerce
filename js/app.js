@@ -10,7 +10,10 @@ let price = arrayProducts[0].price;
 let originalPrice = arrayProducts[0].original_price;
 let sold = arrayProducts[0].sold_quantity;
 let rating = arrayProducts[0].reviews.rating_average;
-console.log(image, name, price, rating, sold, originalPrice);
+console.log(image, name, price,originalPrice);
+
+drawProducts(id, image, name, price, rating, sold, originalPrice);
+
 }
 
 //*Funcionamiento del carrito de compras*////
