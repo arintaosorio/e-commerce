@@ -28,14 +28,14 @@ h1 {
 Fix link outlines after click
 ***/
 a {
-	color: #E02222;
+	color: #FF9591;
 }
 a, a:focus, a:hover, a:active {
 	outline: 0;
  	text-decoration: none;
 }
 a:hover {
-	color: #E02222;
+	color: #FF9591;
 	text-decoration: underline;
 }
 
@@ -310,11 +310,11 @@ Custom Scrollbars
 
 ::-moz-selection {
   color: #fff;
-  background: #e45000;
+  background: #FF9591;
 }
 ::selection {
   color: #fff;
-  background: #e45000;
+  background: #FF9591;
 }
 
 /* Global classes */
@@ -338,7 +338,7 @@ Pre-Header and pre-header elements
 	color: #616b76;
 }
 .pre-header a:hover {
-	color: #E02222;
+	color: #FF9591;
 }
 .pre-header a:focus {
 	text-decoration: none;
@@ -367,7 +367,7 @@ Pre-Header and pre-header elements
 	margin-right: 0;
 }
 .shop-currencies a.current {
-	color: #E02222;
+	color: #FF9591;
 }
 
 /* langs block */
@@ -508,7 +508,7 @@ body.page-header-fixed {
 .header-navigation ul > li.open > a,
 .header-navigation ul > li.open > a:hover,
 .header-navigation ul > li.open > a:focus {
-	color: #e02222;
+	color: #FF9591;
 	background: #fcfcfc;
 	text-decoration: none;
 }
@@ -714,7 +714,7 @@ body.page-header-fixed {
 	opacity: 0.6;
 }
 .header-navigation li.menu-search i:hover {
-	color: #e02222;
+	color: #FF9591;
 	background-position: 0 -15px;
 }
 /*.header-navigation .fa-search:before {
@@ -873,7 +873,7 @@ Sidebar
 	color: #3E4D5C;
 }
 .sidebar a:hover {
-	color: #E02222;
+	color: #FF9591;
 }
  .sidebar-menu a {
 	display: block;
@@ -892,7 +892,7 @@ Sidebar
     color: #3E4D5C;
 }
 .sidebar .dropdown.open .dropdown-toggle:hover {
-	color: #E02222;
+	color: #FF9591;
 }
 .sidebar .dropup.open > .dropdown-toggle, .dropdown.open > .dropdown-toggle {
     border-color: none !important;
@@ -950,7 +950,7 @@ Sidebar
 }
 .sidebar-menu .dropdown-menu li > a:hover, .sidebar-menu .dropdown-menu li > a:focus, .sidebar-menu li.active > a, .sidebar-menu li.active > a:hover {
 	background: none !important;
-	color: #E02222;
+	color: #FF9591;
 }
 .sidebar .dropdown-menu > li > a .fa-angle-down {
 	position: absolute;
@@ -1028,18 +1028,18 @@ steps block and steps block elements
 	padding: 30px 0;	
 }
 .steps-block ::-moz-selection {
-  color: #e45000;
+  color: #FF9591;
   background: #fff;
 }
 .steps-block ::selection {
-  color: #e45000;
+  color: #FF9591;
   background: #fff;
 }
 .steps-block-gray {
 	background: #a0a3a4;
 }
 .steps-block-red {
-	background: #e84d1c;
+	background: #FF9591	;
 }
 .steps-block-col {
 	overflow: hidden;
@@ -1206,10 +1206,10 @@ steps block and steps block elements
 }
 .content-page a:hover, 
 .sidebar2 a:hover {
-	color: #E02222;
+	color: #FF9591;
 }
 .content-page .link, .content-page .link:hover, .content-page .link:active {
-	color: #E02222;
+	color: #FF9591;
 }
 .content-page h2, 
 .content-page h3, 
@@ -1261,7 +1261,7 @@ steps block and steps block elements
 	line-height: 128px;
 	font-size: 128px;
 	font-weight: 300;
-	color: #E02222;
+	color: #FF9591;
 	text-align: right;
 }
 .page-404 .details {
@@ -1285,7 +1285,7 @@ steps block and steps block elements
 	line-height: 128px;
 	font-size: 128px;
 	font-weight: 300;
-	color: #E02222;
+	color: #FF9591;
 	text-align: right;
 }
 .page-500 .details {
@@ -1304,7 +1304,7 @@ div.content-form-page {
 	color: #767F88;
 }
 .content-form-page a:hover {
-	color: #E02222;
+	color: #FF9591;
 }
 .form-without-legend {
 	padding-top: 25px;
@@ -2093,7 +2093,7 @@ Demo Utils
   background: none;
 }
 .quote-v1 a.btn-transparent:hover {
-  background: #E02222;
+  background: #FF9591;
   color: #fff;
   transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -2119,7 +2119,7 @@ Demo Utils
 	color: #3e4d5c;
 }
 .recent-work h2 a:hover {
-	color: #E02222;
+	color: #FF9591;
 }
 .recent-work-item {
 	padding-left: 10px;
@@ -2177,7 +2177,7 @@ Demo Utils
     -webkit-transition: all 0.6s ease;	
 }
 .recent-work .recent-work-item .fa:hover {
-	color: #E02222;
+	color: #FF9591;
 }
 .recent-work .recent-work-item .fa-link {
 	left: -100px;
@@ -2290,7 +2290,7 @@ Demo Utils
 	color: #3e4d5c;
 }
 .our-clients h2 a:hover {
-	color: #E02222;
+	color: #FF9591;
 }
 .our-clients .client-item {
 	background: #f8f8f8;
@@ -2381,7 +2381,7 @@ Demo Utils
   line-height:40px;
 }
 .front-team h3 strong {
-  color: #E02222;
+  color: #FF9591;
   font-size: 20px;
   font-weight: 400; 
 }
