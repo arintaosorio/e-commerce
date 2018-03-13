@@ -1,3 +1,4 @@
+
 const giveEventTag = collection => {
   let tagCategory = Array.from(collection);
   tagCategory.forEach(a => {
@@ -13,22 +14,24 @@ const getDetailsCharacters = e => {
   select(urlId);//Función que accede al endpoint de Mercado libre.
 };//Fin de función getDetailsCharacters().
 
-//Función que se ejecuta cuando se carga el tipo de data por categoria.
-const giveEventBtn = (data) => {
-  let btnCollection = document.getElementsByClassName('btnAddRemove');
-  let tagBtn = Array.from(btnCollection);
-  tagBtn.forEach(a => {
-    let arrayResults = data.results;
-    a.addEventListener('click', getStatusProduct(arrayResults) );
-  })
-}//Fin de función giveEventList(collection).
 
-const getStatusProduct = (arrayResults, e) => {
+const giveEventBtn = (collection,arrayProducts) => {
+  let list = Array.from(collection);
+  list.forEach(li => {
+    li.addEventListener('click', getInfBtn);
+   })
+}//Fin de función giveEventList(collection)
+const getInfBtn = (e) => {
   e.preventDefault();
   let tag = e.target;
-  //let urlId = tag.innerText;
-  //Necestio parasar como parametro al id que se va a concatenar
-  // en el template!, para que pueda hacer la comparaqción la función
-  // que se encuentra más adelante.
-  changeButtonStatus(arrayResults, tag);//Función que
+  //let textBtn = tag.innerText;
+  let idSelected = tag.dataset.id;
+  let name = tag.dataset.name;
+  let image = tag.dataset.image;
+  let price = tag.dataset.price;
+
+  //console.log(idSelected);
+  //console.log(textBtn);
+  changeButtonStatus(idSelected, name, image, price, tag)
+
 };//Fin de función getDetailsCharacters().

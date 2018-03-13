@@ -1,4 +1,5 @@
 
+
 let contentProducts = document.getElementById('container-products');//Elemento al que se le pintará la cuenta los productos agregados.
 let templateProduct = ``;
 const drawProducts = (id, image, name, price, rating, sold, originalPrice, currency, chainText) => {
@@ -25,11 +26,11 @@ const drawProducts = (id, image, name, price, rating, sold, originalPrice, curre
         </div></div></div>
         `;
 
+ 
   
+   //console.log(templateProduct);
+     contentProducts.innerHTML = templateProduct;
 
-        
-//  console.log(templateProduct);
-   contentProducts.innerHTML = templateProduct;
 }//Fin de función drawProducts(array).
 
 

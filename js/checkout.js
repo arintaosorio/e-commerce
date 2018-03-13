@@ -18,7 +18,9 @@ let iEnd = arrayProducts.length-1;
 arrayProducts[iEnd]= arrayProducts[iEnd].slice(0,-2);
 let jsonProduc = JSON.parse(strProduct);//Arreglo obtenido de localStorage.
 console.log(jsonProduc);
-paintCheckout(jsonProduc);
+
+//paintCheckout(jsonProduc);//Pintar la cuenta de los productos seleccionados.
+
 //let total = calculateTotal(jsonProduc);
 //paintTotal (total);
 //console.log(total);

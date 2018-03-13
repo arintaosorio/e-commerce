@@ -1,3 +1,20 @@
+//***************************************
+const apiMercadolibre = () => {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.mercadolibre.com/users/307324513/`)
+        .then(function(response) {
+            response.json().then(function(result) {
+                console.log(result);
+        });
+    })
+        .catch(function(err) {
+            console.log(err);
+        });
+};
+
+apiMercadolibre();
+//***************************************
+
+
 const select = (category) => {
     if (category == 'MAQUILLAJE'){
         let search = 'MLM1248';
@@ -24,8 +41,8 @@ const apiProduct = (endpoint) => {
     fetch(endpoint)
     .then(function(response) {
         response.json().then(function(responseJSON) {
-            showProducts(responseJSON.results)
-            //drawProducts(responseJSON.results)
+            showProducts(responseJSON.results);
+          
             //giveEventBtn(responseJSON)
     });
 })
