@@ -79,90 +79,50 @@ function cartProductPop (array) {
 
 }//Fin de la función cartPop(array).
 
-//------------------FUNCIÓN PAYPAL-------------
-/*
+
+
+function payPal(total) {
+  console.log(total);
   paypal.Button.render({
 
-      env: 'sandbox', // sandbox | production
+    env: 'sandbox', // sandbox | production
 
-      // PayPal Client IDs - replace with your own
-      // Create a PayPal app: https://developer.paypal.com/developer/applications/create
-      client: {
-          sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
-          production: 'AXogq8X2C5u1kEiDR8P8KHsbQfS3YgiyxFd1Ovvjenv8nD-10pOhb4M9xOc_G6T1Adc3HKsdg5iEw1S9'
-      },
+    // PayPal Client IDs - replace with your own
+    // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+    client: {
+        sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+        production: 'AdHnjwFAeSTLUjemTdVWMfo0P0kcfj6NXUorLoZk5qUWwGEuNvTTxpp6yimhrSoJ4zZK49oxQQnNMUOX'
+    },
 
-      // Show the buyer a 'Pay Now' button in the checkout flow
-      commit: true,
+    // Show the buyer a 'Pay Now' button in the checkout flow
+    commit: true,
 
-      // payment() is called when the button is clicked
-      payment: function(data, actions) {
+    // payment() is called when the button is clicked
+    payment: function(data, actions) {
 
-          // Make a call to the REST api to create the payment
-          return actions.payment.create({
-              payment: {
-                  transactions: [
-                      {
-                          amount: { total: `${strTotal}`, currency: 'USD' }
-                      }
-                  ]
-              }
-          });
-      },
+        // Make a call to the REST api to create the payment
+        return actions.payment.create({
+            payment: {
+                transactions: [
+                    {
+                        amount: { total: total, currency: 'MXN' }
+                    }
+                ]
+            }
+        });
+    },
 
-      // onAuthorize() is called when the buyer approves the payment
+    // onAuthorize() is called when the buyer approves the payment
     onAuthorize: function(data, actions) {
 
-      // Make a call to the REST api to execute the payment
-      return actions.payment.execute().then(/*function(data) {
-          console.log(data);
-          window.alert('Payment Complete!');
-          
-          return data;
-      }*/ getData);
-     
-      //console.log(data);
-    printReceipt(data);
-      
-  }
+        // Make a call to the REST api to execute the payment
+        return actions.payment.execute().then(function(data) {
+            console.log(data);
+            
+            window.alert('Payment Complete!');
+        });
+    }
 
 }, '#paypal-button-container');
-
-
-
-function getData(data) {
-  console.log(data);
-  printReceipt(data);
-}
-
-
-function printReceipt(data) {
-  console.log(data);
-  let dataId = data.id;
-  console.log(dataId);
-  let firstName =  data["payer"]["payer_info"].first_name;
-  console.log(firstName);
-  let lastName = data["payer"]["payer_info"].last_name;
-  console.log(lastName);
-  let totalAmount = data.transactions[0]["amount"].total;
-  console.log(totalAmount);
-  let currency = data.transactions[0]["amount"].currency;
-  console.log(totalAmount);
- 
-  let templateReceipt = ``;
-  templateReceipt = `
- <h4>${dataId} </h4>
- <p>Nombre : ${firstName} ${lastName}<p>
- <h5> Cantidad total: </h5>
- <p>$${totalAmount} ${currency}</p>
-`;
-
-let containerPage = document.getElementById("cont-table-complete");
-containerPage.innerHTML= "";
-let finalContainer = document.createElement("div");
-finalContainer.className = "col text-center";
-finalContainer.innerHTML = templateReceipt;
-containerPage.appendChild(finalContainer);
   
 }
-
