@@ -50,12 +50,19 @@
 <!-- Body BEGIN -->
 <script type="text/javascript">
         window.onload = function() {
-          let dataProducts = products;
-            let imagen = dataProducts.img;
-            let nombre = dataProducts.nombre;
-            let precio = dataProducts.precio;
-            drawProductsHome(imagen,nombre,precio);
-            
+            let templeatComplet ='';
+            for (product of products) {
+                let imagen = product.img;
+                let nombre = product.nombre;
+                let precio = product.precio;
+                let templateOneProduct = drawProductsHome(imagen,nombre,precio);
+                //console.log(nombre);
+                templeatComplet += templateOneProduct;
+                //console.log(templateOneProduct);
+            }
+        console.log(templeatComplet);
+        let contentProducts = document.getElementById('container-products');//Elemento al que se le pintará la cuenta los productos agregados.
+        contentProducts.innerHTML = templeatComplet;
         };
     </script>
 <body class="ecommerce">
@@ -109,10 +116,10 @@
         <!-- BEGIN NAVIGATION -->
         <div class="header-navigation">
           <ul>
-           <li ><a class="category">Piel</a></li>
-           <li ><a class="category">Cabello</a></li>
-          <li ><a class="category">Higiene</a></li>
-           <li ><a class="category">Maquillaje</a></li>
+           <li ><a class="category" href="index.html">Piel</a></li>
+           <li ><a class="category" href="index.html">Cabello</a></li>
+          <li ><a class="category" href="index.html">Higiene</a></li>
+           <li ><a class="category" href="index.html">Maquillaje</a></li>
 
 
           </ul>
