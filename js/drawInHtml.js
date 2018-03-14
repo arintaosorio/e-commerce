@@ -77,7 +77,7 @@ return templateCheck
 
 const drawCheckComplet = (subtotal) => {
   //let subtotal = 47.00;
-  let save = subtotal*0.05;
+  let save = (subtotal*0.05).toFixed(2);
   let total = subtotal - save;
   let templateTotal = `<div class="shopping-total">
     <ul>
