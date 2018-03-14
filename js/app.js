@@ -30,7 +30,7 @@ giveEventBtn(tagCollectionBtn, arrayProducts);//Función que asigna evento click
 
 }
 
-//*Funcionamiento del carrito de compras*////
+/*Funcionamiento del carrito de compras*/
 
 const arrayProductAdd = [];//Arreglo que guardará los productos de manera local.
 const btnCheckout = document.querySelector('#checkout');

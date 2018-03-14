@@ -1,4 +1,5 @@
 
+
 let counterItems = document.querySelector('#counter-items');
 // let eventCheckout = document.querySelector('#checkout');
 // eventCheckout.addEventListener('click', getObjLocalStorage);
@@ -39,6 +40,7 @@ function paintTotal () {
 }//Fin de la función paintTotal()
 
 function paintCheckout (array) {
+
   let templateOneProduct ='';
     for (product of array) {
       templateOneProduct += drawChekout(product);
@@ -47,6 +49,7 @@ function paintCheckout (array) {
   let templateBill = paintTotal();
   conteinerCheck.innerHTML = templateOneProduct+templateBill;
 }//fin de función paintCheckout(array).
+
 
 //Llamando a la función que detonara el evento que preguntará la cantidad que de un producto se ha elegido.
 let control = document.getElementsByClassName('control');
@@ -61,6 +64,7 @@ function cartProductPop (array) {
   let contentCart = document.querySelector('#cart');
   let templatePopComplet = '';
   for (product of array) {
+
     templatePopComplet +=   cartPop(product);//Función que pinta en el carrito local.
     //console.log(templatePopComplet);
   }
@@ -72,9 +76,10 @@ function cartProductPop (array) {
 `;
   contentCart.innerHTML = templatePopComplet+templateCartBtn;
 
+
 }//Fin de la función cartPop(array).
 
-
+//------------------FUNCIÓN PAYPAL-------------
 /*
   paypal.Button.render({
 
@@ -106,13 +111,58 @@ function cartProductPop (array) {
       },
 
       // onAuthorize() is called when the buyer approves the payment
-      onAuthorize: function(data, actions) {
+    onAuthorize: function(data, actions) {
 
-          // Make a call to the REST api to execute the payment
-          return actions.payment.execute().then(function() {
-              window.alert('Payment Complete!');
-          });
-      }
+      // Make a call to the REST api to execute the payment
+      return actions.payment.execute().then(/*function(data) {
+          console.log(data);
+          window.alert('Payment Complete!');
+          
+          return data;
+      }*/ getData);
+     
+      //console.log(data);
+    printReceipt(data);
+      
+  }
 
-  }, '#paypal-button-container');
-*/
+}, '#paypal-button-container');
+
+
+
+function getData(data) {
+  console.log(data);
+  printReceipt(data);
+}
+
+
+function printReceipt(data) {
+  console.log(data);
+  let dataId = data.id;
+  console.log(dataId);
+  let firstName =  data["payer"]["payer_info"].first_name;
+  console.log(firstName);
+  let lastName = data["payer"]["payer_info"].last_name;
+  console.log(lastName);
+  let totalAmount = data.transactions[0]["amount"].total;
+  console.log(totalAmount);
+  let currency = data.transactions[0]["amount"].currency;
+  console.log(totalAmount);
+ 
+  let templateReceipt = ``;
+  templateReceipt = `
+ <h4>${dataId} </h4>
+ <p>Nombre : ${firstName} ${lastName}<p>
+ <h5> Cantidad total: </h5>
+ <p>$${totalAmount} ${currency}</p>
+`;
+
+let containerPage = document.getElementById("cont-table-complete");
+containerPage.innerHTML= "";
+let finalContainer = document.createElement("div");
+finalContainer.className = "col text-center";
+finalContainer.innerHTML = templateReceipt;
+containerPage.appendChild(finalContainer);
+  
+}
+

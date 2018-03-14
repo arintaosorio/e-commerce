@@ -48,6 +48,16 @@
 
 
 <!-- Body BEGIN -->
+<script type="text/javascript">
+        window.onload = function() {
+          let dataProducts = products;
+            let imagen = dataProducts.img;
+            let nombre = dataProducts.nombre;
+            let precio = dataProducts.precio;
+            drawProductsHome(imagen,nombre,precio);
+            
+        };
+    </script>
 <body class="ecommerce">
 
 
@@ -130,7 +140,7 @@
                     <div class="container">
                         <div class="carousel-position-four text-center">
                             <h2 class="margin-bottom-20 animate-delay carousel-title-v3 border-bottom-title text-uppercase" data-animation="animated fadeInDown">
-                                Tones of <br/><span   >Shop UI Features</span><br/> designed
+                                Miles de <br/><span  >productos</span><br/> solo para ti
                             </h2>
                             <p class="carousel-subtitle-v2" data-animation="animated fadeInUp">Lorem ipsum dolor sit amet constectetuer diam <br/>
                             adipiscing elit euismod ut laoreet dolore.</p>
@@ -201,19 +211,25 @@
     </div>
     <!-- END SLIDER -->
 
+
+
     <div class="main">
       <div class="container">
-        <!-- BEGIN SALE PRODUCT & NEW ARRIVALS -->
-        <div id="container-products" class="row margin-bottom-40">
+        <div  class="row margin-bottom-40">
+          <div id="container-products">
 
-        <!-- END SALE PRODUCT & NEW ARRIVALS -->
+          </div>
+
 
        </div>
-
-
-
       </div>
     </div>
+
+     
+              
+              
+              
+
 
     <!-- BEGIN STEPS -->
     <div class="steps-block steps-block-red">
@@ -260,7 +276,7 @@
           <!-- END BOTTOM ABOUT BLOCK -->
           <!-- BEGIN BOTTOM INFO BLOCK -->
           <div class="col-md-3 col-sm-6 pre-footer-col">
-            <h2>Information</h2>
+            <h2>Información</h2>
             <ul class="list-unstyled">
               <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Entrega</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Servicio al cliente</a></li>
@@ -399,6 +415,7 @@
     <script type="text/javascript" src="js/endpointMercadoLibre.js"></script>
     <!-- <script type="text/javascript" src="js/checkout.js"></script> -->
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
 
 
 </body>

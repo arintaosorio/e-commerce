@@ -1,3 +1,4 @@
+
 const drawProducts = (id, image, name, price, rating, sold, originalPrice,arrayProducts, templateProduct) => {
         templateProduct = `  <div class="col-md-3 sale-product">
           <div class="owl-item active" style="height: 280px;width: 188px; margin-right: 0px;"><div>
@@ -18,6 +19,7 @@ const drawProducts = (id, image, name, price, rating, sold, originalPrice,arrayP
           `;
    return templateProduct
 //     contentProducts.innerHTML = templateProduct;
+
 }//Fin de función drawProducts(array).
 
 //Template de Checkout.
@@ -119,4 +121,4 @@ const cartPop = (product) => {
               </ul>
   `;
   return templateCartPop
-}
+}//Fin de la función cartPop (product).

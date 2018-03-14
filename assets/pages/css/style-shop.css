@@ -83,7 +83,7 @@ Header and header elements
   color: #fff;
 }
 .ecommerce .header-navigation ul > li.active > a {
-	/*border-bottom: 2px solid #E44F00;*/
+	/*border-bottom: 2px solid #FF9591;*/
 	border-bottom: none !important;
 }
 
@@ -185,7 +185,7 @@ Header and header elements
 .top-cart-content {
 	padding: 8px 0 10px;
 	background: #fcfafb;
-	border-top: solid 2px #ea4c1d;
+	border-top: solid 2px #FF9591;
 	box-shadow: 5px 5px rgba(91, 91, 91, 0.2);
 	width: 364px;
 	margin-top: 12px;
