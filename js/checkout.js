@@ -73,7 +73,8 @@ function cartProductPop (array) {
   }
 
   let templateCartBtn = `<div class="text-right">
-  <a id="vaciar" class="btn btn-primary">Vaciar carrito</a>
+<<<<<<< HEAD
+<a href="checkout.html" id="vaciar-carrito" class="btn btn-default">Vaciar Carrito</a>
  </div>
 `;
   contentCart.innerHTML = templatePopComplet+templateCartBtn;
@@ -83,6 +84,17 @@ function cartProductPop (array) {
 
 
 
+/* ---- Funcion para vaciar Carrito ---- */
+const vaciarCarritoBtn = document.getElementById('vaciar-carrito'); 
+vaciarCarritoBtn.addEventListener('click', function vaciarLocalStorage() {
+  localStorage.clear();
+  let contentCart = document.querySelector('#cart');
+  contentCart.innerHTML="";
+});
+
+
+
+/* ---- Funcion para Pago de PAYPAL ---- */
 function payPal(total) {
   console.log(total);
   paypal.Button.render({
@@ -149,6 +161,8 @@ function getData(data) {
 }
 
 
+
+/* --------- Funcion para Comprobante de Pago PayPal ------- */
 function printReceipt(data) {
   console.log(data);
 

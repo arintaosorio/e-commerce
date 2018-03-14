@@ -85,9 +85,9 @@ function calculateTotal(arrayProductAdd) {
     priceTotal += parseInt(product.price);
     total.innerText = '$' + priceTotal; 
   }
-  console.log(priceTotal);
-  let strTotal = localStorage.setItem('total',priceTotal);
-  return priceTotal;
+  // console.log(priceTotal);
+  // let strTotal = localStorage.setItem('total',priceTotal);
+  // return priceTotal;
 }
 //console.log(objProduct);
 
