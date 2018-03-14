@@ -1,6 +1,7 @@
 
 
 let counterItems = document.querySelector('#counter-items');
+let total= document.querySelector('#total');
 // let eventCheckout = document.querySelector('#checkout');
 // eventCheckout.addEventListener('click', getObjLocalStorage);
 let json = getObjLocalStorage();//LLamando la inf almacenada en localStorage.
@@ -12,6 +13,7 @@ function calculateTotal(array) {
   let priceTotal = 0;
   for (let product of array) {
     priceTotal += parseInt(product.price);
+    total.innerText = '$' + priceTotal; 
   }
   console.log(priceTotal);
   let strTotal = localStorage.setItem('total',priceTotal);
@@ -29,6 +31,7 @@ let jsonProduc = JSON.parse(strProduct);//Arreglo obtenido de localStorage.
 let total = calculateTotal(jsonProduc);
 paintCheckout(jsonProduc);//Pintar la cuenta de los productos seleccionados.
 counterItems.innerText = jsonProduc.length + ' items';
+
 return jsonProduc
 }//fin de función getObjLocalStorage()
 
@@ -70,8 +73,7 @@ function cartProductPop (array) {
   }
 
   let templateCartBtn = `<div class="text-right">
-   <a href="checkout.html" class="btn btn-default">Ver carrito</a>
-   <a id="checkout" href="checkout.html" class="btn btn-primary">Checkout</a>
+  <a id="vaciar" class="btn btn-primary">Vaciar carrito</a>
  </div>
 `;
   contentCart.innerHTML = templatePopComplet+templateCartBtn;
