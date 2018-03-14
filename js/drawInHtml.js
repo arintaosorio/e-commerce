@@ -13,13 +13,12 @@ const drawProducts = (id, image, name, price, rating, sold, originalPrice, curre
         <center><img src=${image} class="img-responsive" alt=${name}></center>
         <div>
         <a href=${image} class="btn btn-default fancybox-button">Zoom</a>
-        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+        <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">Ver</a>
         </div>
         </div>
         <h3><a href="#">${chainText}</a></h3>
         <div  class="pi-price">$${price}${currency}</div>
-        <a  data-product-id=${id} href="javascript:;" class="btn btn-default add2cart btnAddRemove">Add to cart</a>
-        <div class="sticker sticker-sale"></div>
+        <a  data-product-id=${id} href="javascript:;" class="btn btn-default add2cart btnAddRemove">Agregar a carrito</a>
         </div>
         </div></div></div>
         `;
