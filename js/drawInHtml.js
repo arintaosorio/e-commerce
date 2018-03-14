@@ -123,3 +123,5 @@ const cartPop = (product) => {
   `;
   return templateCartPop
 }//Fin de la función cartPop (product).
+
+
