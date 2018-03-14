@@ -124,14 +124,81 @@ function payPal(total) {
     // onAuthorize() is called when the buyer approves the payment
     onAuthorize: function(data, actions) {
 
-        // Make a call to the REST api to execute the payment
-        return actions.payment.execute().then(function(data) {
-            console.log(data);
-            
-            window.alert('Payment Complete!');
-        });
-    }
+      // Make a call to the REST api to execute the payment
+      return actions.payment.execute().then(/*function(data) {
+          console.log(data);
+          window.alert('Payment Complete!');
+          
+          return data;
+      }*/ getData);
+     
+      //console.log(data);
+    printReceipt(data);
+      
+  }
 
 }, '#paypal-button-container');
+}
+
+
+function getData(data) {
+  console.log(data);
+  printReceipt(data);
+}
+
+
+function printReceipt(data) {
+  console.log(data);
+
+  let containerPage = document.getElementById("conteiner-paypal");
+  let templatePayPal = ``;
+
+  let dataId = data.id;
+  console.log(dataId);
+
+  let dataCreateTime = data.create_time;
+  console.log(dataCreateTime);
+
+  let firstName =  data["payer"]["payer_info"].first_name;
+  console.log(firstName);
+
+  let lastName = data["payer"]["payer_info"].last_name;
+  console.log(lastName);
+
+  let state = data["payer"]["payer_info"]["billing_address"].state;
+  console.log(state);
+
+  let totalAmount = data.transactions[0]["amount"].total;
+  console.log(totalAmount);
+
+  let currency = data.transactions[0]["amount"].currency;
+  console.log(currency);
+ 
+  
+  templatePayPal = `<div class="shopping-total recibo">
+  <ul>
+    <li>
+      <em>No.de Transaccion:</em>
+      <strong class="dataId"><span></span>${dataId}</strong>
+    </li>
+    <li>
+      <em>Cantidad:</em>
+      <strong class="price"><span>$</span>${totalAmount} ${currency}</strong>
+    </li>
+    <li>
+      <em>Nombre:</em>
+      <strong class="price"><span></span>${firstName} ${lastName}</strong>
+    </li>
+    <li>
+      <em>Fecha y Lugar de transaccion:</em>
+      <strong class="price"><span></span>${dataCreateTime}</strong>
+     <center> <strong class="price"><span></span>${state}</strong></center>
+    </li>
+  </ul>
+</div>
+`;
+
+
+containerPage.innerHTML = templatePayPal;
   
 }
