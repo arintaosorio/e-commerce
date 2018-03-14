@@ -70,7 +70,7 @@
                     <ul class="list-unstyled list-inline pull-right">
                         <li><a href="account.html">Mi cuenta</a></li>
 
-                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a id="checkout" href="checkout.html">Checkout</a></li>
                         <li><a href="#">Iniciar Sesión</a></li>
                     </ul>
                 </div>
@@ -90,25 +90,15 @@
         <!-- CARRITO -->
         <div class="top-cart-block">
           <div class="top-cart-info">
-            <a id="counterItems" href="javascript:void(0);" class="top-cart-info-count">0</a>
+            <a id="counter-items" href="javascript:void(0);" class="top-cart-info-count">0</a>
             <a href="javascript:void(0);" class="top-cart-info-value">$1260</a>
           </div>
           <i class="fa fa-shopping-cart"></i>
 
           <div class="top-cart-content-wrapper">
-            <div class="top-cart-content">
-              <ul class="scroller" style="height: 250px;">
-                <li>
-                  <a href="#"><img src="assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                  <span class="cart-content-count">x 1</span>
-                  <strong><a href="#">Rolex Classic Watch</a></strong>
-                  <em>$1230</em>
-                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                </li>
+            <div id="cart" class="top-cart-content">
 
-              </ul>
               <div class="text-right">
-                <a href="checkout.html" class="btn btn-default">Ver carrito</a>
                 <a id="checkout" href="checkout.html" class="btn btn-primary">Checkout</a>
               </div>
             </div>
@@ -421,9 +411,9 @@
     </script>
     <!-- END PAGE LEVEL JAVASCRIPTS -->
     <script type="text/javascript" src="js/drawInHtml.js"></script>
-    <script type="text/javascript" src="js/endpointMercadoLibre.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
-    <script type="text/javascript" src="js/checkout.js"></script>
+    <script type="text/javascript" src="js/endpointMercadoLibre.js"></script>
+    <!-- <script type="text/javascript" src="js/checkout.js"></script> -->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
 

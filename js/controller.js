@@ -35,3 +35,20 @@ const getInfBtn = (e) => {
   changeButtonStatus(idSelected, name, image, price, tag)
 
 };//Fin de función getDetailsCharacters().
+
+//Evento del botón que controla la cantidad de productos a comprar.
+const giveEventControl = collection => {
+  let tagCategory = Array.from(collection);
+  tagCategory.forEach(input => {
+  //  console.log(input);
+    input.addEventListener('change', getDetailsQuantity );
+  })
+}//Fin de función giveEventList(collection).
+
+const getDetailsQuantity = e => {
+  e.preventDefault();
+  let tag = e.target;
+  console.log(tag);
+  let quantity = tag.innerText;
+  quantityProducts(quantity);//Función que accede al endpoint de Mercado libre.
+};//Fin de función getDetailsCharacters().

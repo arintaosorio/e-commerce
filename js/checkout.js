@@ -1,107 +1,86 @@
-// let json = getObjLocalStorage();//LLamando la inf almacenada en localStorage.
-// console.log(json);
 
 
-// function calculateTotal(array) {
-//   let priceTotal = 0;
-//   for (let product of array) {
-//     priceTotal += product.price;
-//   }
-//   return priceTotal;
-// }
-
-// function getObjLocalStorage () {
-// let strProduct = localStorage.getItem('product');
-// let arrayProducts = strProduct.split("},{");
-// arrayProducts[0] = arrayProducts[0].substring(2);
-// let iEnd = arrayProducts.length-1;
-// arrayProducts[iEnd]= arrayProducts[iEnd].slice(0,-2);
-// let jsonProduc = JSON.parse(strProduct);//Arreglo obtenido de localStorage.
-// console.log(jsonProduc);
-// paintCheckout(jsonProduc);
-// //let total = calculateTotal(jsonProduc);
-// //paintTotal (total);
-// //console.log(total);
-// return jsonProduc
-
-// }//fin de función getObjLocalStorage()
-// /*
-// function paintTotal (total) {
-//   let tableResult = document.querySelector('#table-result');//Elemento al que se le pintará la cuenta los productos agregados.
-//   let templateResult = `<tr>
-//     <td>${total}</td>
-//   </tr>`
-//   tableResult.innerHTML = templateResult;
-//   console.log(total);
-// }
-// */
+let counterItems = document.querySelector('#counter-items');
+// let eventCheckout = document.querySelector('#checkout');
+// eventCheckout.addEventListener('click', getObjLocalStorage);
+let json = getObjLocalStorage();//LLamando la inf almacenada en localStorage.
+console.log(json);
+cartProductPop(json);
 
 
+function calculateTotal(array) {
+  let priceTotal = 0;
+  for (let product of array) {
+    priceTotal += parseInt(product.price);
+  }
+  console.log(priceTotal);
+  let strTotal = localStorage.setItem('total',priceTotal);
+  return priceTotal;
+}//Fin de la función calculateTotal(array).
+
+let templateOneProduct = '';
+function getObjLocalStorage () {
+let strProduct = localStorage.getItem('product');
+let arrayProducts = strProduct.split("},{");
+arrayProducts[0] = arrayProducts[0].substring(2);
+let iEnd = arrayProducts.length-1;
+arrayProducts[iEnd]= arrayProducts[iEnd].slice(0,-2);
+let jsonProduc = JSON.parse(strProduct);//Arreglo obtenido de localStorage.
+let total = calculateTotal(jsonProduc);
+paintCheckout(jsonProduc);//Pintar la cuenta de los productos seleccionados.
+counterItems.innerText = jsonProduc.length + ' items';
+return jsonProduc
+}//fin de función getObjLocalStorage()
+
+function paintTotal () {
+  let strTotal = localStorage.getItem('total');
+  strTotal=parseInt(strTotal);
+  console.log(strTotal);
+  return drawCheckComplet(strTotal);
+}//Fin de la función paintTotal()
 
 function paintCheckout (array) {
-  let tableCheck = document.getElementById('table-checkout');//Elemento al que se le pintará la cuenta los productos agregados.
-  let priceTotal = document.getElementById('price-total');
-  let templateProduct = '';
 
-  for (product of array) {
-      templateProduct += `
-      <tr>
-      <td class="goods-page-image">
-      <a href="javascript:;"><img src="assets/pages/img/products/model3.jpg" alt="Berry Lace Dress"></a>
-    </td>
-    <td class="goods-page-description">
-      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
-      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
-      <em>More info is here</em>
-    </td>
-    <td class="goods-page-ref-no">
-      javc2133
-    </td>
-    <td class="goods-page-quantity">
-      <div class="product-quantity">
-          <input id="product-quantity" type="text" value="1" readonly class="form-control input-sm">
-      </div>
-    </td>
-    <td class="goods-page-price">
-      <strong><span>$</span>47.00</strong>
-    </td>
-    <td class="goods-page-total">
-      <strong><span>$</span>47.00</strong>
-    </td>
-    <td class="del-goods-col">
-      <a class="del-goods" href="javascript:;">&nbsp;</a>
-    </td>
-  </tr>
-        `;
-  }
-
-
-  //let total = 4000;
-  let total = calculateTotal(array);
-  console.log(total);
-  let strTotal = localStorage.setItem('total',total);
-
-  let templateComplet = `
- 
-  
-  <ul>
-    <li class="shopping-total-price">
-      <em>Total</em>
-      <strong class="price"><span>$</span>${total}</strong>
-    </li>
-  </ul>
-
-          `;
-
-  priceTotal.innerHTML = templateComplet;
+  let templateOneProduct ='';
+    for (product of array) {
+      templateOneProduct += drawChekout(product);
+    }
+  let conteinerCheck = document.querySelector('#conteiner-check');
+  let templateBill = paintTotal();
+  conteinerCheck.innerHTML = templateOneProduct+templateBill;
 }//fin de función paintCheckout(array).
 
-let strTotal = localStorage.getItem('total');
-strTotal=parseInt(strTotal);
-console.log(strTotal);
+
+//Llamando a la función que detonara el evento que preguntará la cantidad que de un producto se ha elegido.
+let control = document.getElementsByClassName('control');
+giveEventControl(control);
+
+ function quantityProducts (quantity) {
+   console.log(quantity);
+ }//Fin de la función quantityProducts
 
 
+function cartProductPop (array) {
+  let contentCart = document.querySelector('#cart');
+  let templatePopComplet = '';
+  for (product of array) {
 
+    templatePopComplet +=   cartPop(product);//Función que pinta en el carrito local.
+    //console.log(templatePopComplet);
+  }
+
+  let templateCartBtn = `<div class="text-right">
+   <a href="checkout.html" class="btn btn-default">Ver carrito</a>
+   <a id="checkout" href="checkout.html" class="btn btn-primary">Checkout</a>
+ </div>
+`;
+  contentCart.innerHTML = templatePopComplet+templateCartBtn;
+
+
+}//Fin de la función cartPop(array).
+
+//------------------FUNCIÓN PAYPAL-------------
+/*
   paypal.Button.render({
 
       env: 'sandbox', // sandbox | production
@@ -156,6 +135,7 @@ function getData(data) {
   printReceipt(data);
 }
 
+
 function printReceipt(data) {
   console.log(data);
   let dataId = data.id;
@@ -185,3 +165,4 @@ finalContainer.innerHTML = templateReceipt;
 containerPage.appendChild(finalContainer);
   
 }
+
