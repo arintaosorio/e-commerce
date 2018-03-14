@@ -22,21 +22,20 @@ const drawProducts = (id, image, name, price, rating, sold, originalPrice,arrayP
 }//Fin de función drawProducts(array).
 
 const drawProductsHome = (imagen, nombre, precio) => {
-//   <h3>${product.title}</h3>
-//let templateProduct = '';
+
      let templateProduct = `  <div class="col-md-3 sale-product">
         <div class="owl-item active"  style="height: 280px;width: 188px; margin-right: 0px;"><div>
         <div class="product-item">
         <div class="pi-img-wrapper">
-        <img src=${imagen} class="img-responsive" style="height:200px;width: 188px;  alt=${nombre}>
+        <img src=${imagen} class="img-responsive" style="height:150px;width: 100px;  alt=${nombre}>
         <div>
         <a href=${imagen} class="btn btn-default fancybox-button">Zoom</a>
         <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">Ver</a>
         </div>
         </div>
         <h3><a href="#">${nombre}</a></h3>
-        <div class="pi-price">${precio}</div>
-        <a  href="javascript:;" class="btn btn-default add2cart btnAddRemove">Añadir a carrito</a>
+        <div class="pi-price">${precio} MXN</div>
+<a data-name=${nombre} data-image = ${imagen} data-price=${precio} class="btn btn-default add2cart btnAddRemove">Add to cart</a>
         <div class="sticker sticker-sale"></div>
         </div>
         </div></div></div>
