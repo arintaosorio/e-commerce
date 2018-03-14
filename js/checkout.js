@@ -87,6 +87,15 @@ function payPal(total) {
 
     env: 'sandbox', // sandbox | production
 
+
+        style: {
+            label: 'paypal',
+            size:  'medium',    // small | medium | large | responsive
+            shape: 'rect',     // pill | rect
+            color: 'black',     // gold | blue | silver | black
+            tagline: false    
+        },
+
     // PayPal Client IDs - replace with your own
     // Create a PayPal app: https://developer.paypal.com/developer/applications/create
     client: {

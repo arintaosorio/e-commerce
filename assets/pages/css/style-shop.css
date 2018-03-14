@@ -507,13 +507,13 @@ Header and header elements
 }
 .goods-page .btn-default {
 	float: left;
-	border: 1px solid #5ea8dc;
-	background: #5ea8dc;
+	border: 1px solid #FF9591;
+	background: #FF9591;
 	color: #fff;
 }
 .goods-page .btn-default:hover {
-	border: 1px solid #408cc2;
-	background: #408cc2;
+	border: 1px solid #FF9591;
+	background:#FF9591;
 }
 .goods-page .btn-primary {
 	float: right;
