@@ -32,16 +32,12 @@ const showProducts = (arrayProducts) => {
     drawProducts(id, image, name, price, rating, sold, originalPrice, currency, chainText);
 
   });
-     
+}     
 
 
 
 
- 
-
-
-
-//*Funcionamiento del carrito de compras*////
+/*Funcionamiento del carrito de compras*/
 
 const arrayProductAdd = [];//Arreglo que guardará los productos de manera local.
 const btnCheckout = document.querySelector('#checkout');
