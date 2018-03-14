@@ -132,7 +132,7 @@
 }
 
 .carousel-slider .carousel-item-seven {
-    background: url();
+    background: url(../../../assets/pages/img/banner4.jpg);
     background-size: cover;
     background-position: center center;
 }
@@ -363,6 +363,12 @@
     top: 25%;
     left: auto;
 }
+.carousel-slider .carousel-position-seven{
+    position: absolute;
+    top: 5%;
+    left: 70%;
+}
+
 
 /* Carousel Animation Delay */
 .carousel-slider .carousel-caption .animate-delay {
