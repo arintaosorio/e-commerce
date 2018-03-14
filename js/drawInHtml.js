@@ -99,6 +99,7 @@ const drawCheckComplet = (subtotal) => {
   </div>
 `;
 //console.log(templateTotal);
+payPal(total);
 //conteinerCheck.innerHTML = templateTotal;
 return templateTotal
 
