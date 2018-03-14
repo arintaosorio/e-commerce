@@ -33,6 +33,7 @@ giveEventBtn(tagCollectionBtn, arrayProducts);//Función que asigna evento click
 /*Funcionamiento del carrito de compras*/
 
 const arrayProductAdd = [];//Arreglo que guardará los productos de manera local.
+
 const btnCheckout = document.querySelector('#checkout');
 console.log(btnCheckout);
 btnCheckout.addEventListener('click', saveLocalS);//Guardando el producto en el carrito.
@@ -42,6 +43,7 @@ function addToCart(id, objProduct) {
   increaseCounter();//Llamando función que incrementa contador.
   console.log(arrayProductAdd);
   cartProductPop(arrayProductAdd);
+  calculateTotal(arrayProductAdd);
 
 }//Fin de función addToCart(id)
 
@@ -51,6 +53,7 @@ function removeFromCart(id, objProduct) {
   decreaseCounter();//Llamando función que decrementa contador.
   console.log(arrayProductAdd);
   cartProductPop(arrayProductAdd);
+  calculateTotal(arrayProductAdd);
 
 }//Fin de función removeFromCart()
 
@@ -74,6 +77,17 @@ const objProduct = {
   name: name,
   url: image,
   price: price,
+}
+function calculateTotal(arrayProductAdd) {
+  let total= document.querySelector('#total');  
+  let priceTotal = 0;
+  for (let product of array) {
+    priceTotal += parseInt(product.price);
+    total.innerText = '$' + priceTotal; 
+  }
+  console.log(priceTotal);
+  let strTotal = localStorage.setItem('total',priceTotal);
+  return priceTotal;
 }
 //console.log(objProduct);
 
