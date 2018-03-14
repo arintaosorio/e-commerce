@@ -122,7 +122,7 @@
     <!-- Header END -->
 
     <div class="main">
-      <div class="container">
+      <div class="container" id="cont-table-complete">
         <!-- BEGIN SIDEBAR & CONTENT -->
         <div class="row margin-bottom-40">
           <!-- BEGIN CONTENT -->
@@ -131,7 +131,7 @@
             <div class="goods-page">
               <div class="goods-data clearfix">
                 <div class="table-wrapper-responsive">
-                <table summary="Shopping cart">
+                <table summary="Shopping cart" id="table-checkout">
                   <tr>
                     <th class="goods-page-image">Image</th>
                     <th class="goods-page-description">Description</th>
@@ -167,7 +167,7 @@
                       <a class="del-goods" href="javascript:;">&nbsp;</a>
                     </td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td class="goods-page-image">
                       <a href="javascript:;"><img src="assets/pages/img/products/model4.jpg" alt="Berry Lace Dress"></a>
                     </td>
@@ -193,26 +193,18 @@
                     <td class="del-goods-col">
                       <a class="del-goods" href="javascript:;">&nbsp;</a>
                     </td>
-                  </tr>
+                  </tr> -->
                 </table>
                 </div>
 
-                <div class="shopping-total">
-                  <ul>
-                    <li>
-                      <em>Sub total</em>
-                      <strong class="price"><span>$</span>47.00</strong>
-                    </li>
-                    <li>
-                      <em>Shipping cost</em>
-                      <strong class="price"><span>$</span>3.00</strong>
-                    </li>
+                <div class="shopping-total" id="price-total">
+                  <!-- <ul>
                     <li class="shopping-total-price">
                       <em>Total</em>
                       <strong class="price"><span>$</span>50.00</strong>
                     </li>
-                  </ul>
-                </div>
+                  </ul> -->
+                </div> 
               </div>
               <button class="btn btn-default" type="submit">Continue shopping <i class="fa fa-shopping-cart"></i></button>
               <button class="btn btn-primary" type="submit">Checkout <i class="fa fa-check"></i></button>
@@ -221,6 +213,7 @@
           <!-- END CONTENT -->
         </div>
         <!-- END SIDEBAR & CONTENT -->
+
 
 
       </div>
