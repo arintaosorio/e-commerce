@@ -48,6 +48,16 @@
 
 
 <!-- Body BEGIN -->
+<script type="text/javascript">
+        window.onload = function() {
+          let dataProducts = products;
+            let imagen = dataProducts.img;
+            let nombre = dataProducts.nombre;
+            let precio = dataProducts.precio;
+            drawProductsHome(imagen,nombre,precio);
+            
+        };
+    </script>
 <body class="ecommerce">
 
 
@@ -276,7 +286,7 @@
           <!-- END BOTTOM ABOUT BLOCK -->
           <!-- BEGIN BOTTOM INFO BLOCK -->
           <div class="col-md-3 col-sm-6 pre-footer-col">
-            <h2>Information</h2>
+            <h2>Información</h2>
             <ul class="list-unstyled">
               <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Entrega</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Servicio al cliente</a></li>
@@ -415,6 +425,7 @@
     <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/checkout.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
 
 
 </body>
