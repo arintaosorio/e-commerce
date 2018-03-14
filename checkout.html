@@ -23,8 +23,8 @@
   <link rel="shortcut icon" href="favicon.ico">
 
 
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css"> 
-      
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+
   <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -63,7 +63,7 @@
                 </div>
                 <!-- TOP MENU -->
             </div>
-        </div>        
+        </div>
     </div>
     <!-- END TOP BAR -->
 
@@ -78,29 +78,19 @@
         <!-- CARRITO -->
         <div class="top-cart-block">
           <div class="top-cart-info">
-            <a href="javascript:void(0);" class="top-cart-info-count">3 items</a>
+            <a id="counter-items" href="javascript:void(0);" class="top-cart-info-count"></a>
             <a href="javascript:void(0);" class="top-cart-info-value">$1260</a>
           </div>
           <i class="fa fa-shopping-cart"></i>
-                        
-          <div class="top-cart-content-wrapper">
-            <div class="top-cart-content">
-              <ul class="scroller" style="height: 250px;">
-                <li>
-                  <a href="#"><img src="assets/pages/img/cart-img.jpg" alt="Rolex Classic Watch" width="37" height="34"></a>
-                  <span class="cart-content-count">x 1</span>
-                  <strong><a href="#">Rolex Classic Watch</a></strong>
-                  <em>$1230</em>
-                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
-                </li>
 
-              </ul>
+          <div class="top-cart-content-wrapper">
+            <div id="cart" class="top-cart-content">
+              
               <div class="text-right">
-                <a href="checkout.html" class="btn btn-default">Ver carrito</a>
                 <a href="checkout.html" class="btn btn-primary">Checkout</a>
               </div>
             </div>
-          </div>            
+          </div>
         </div>
         <!-- FIN CARRITO -->
 
@@ -113,7 +103,7 @@
             <li><a href="categoria.html">Higiene</a></li>
            <li><a href="categoria.html">Maquillaje</a></li>
 
-  
+
           </ul>
         </div>
         <!-- END NAVIGATION -->
@@ -129,90 +119,8 @@
           <div class="col-md-12 col-sm-12">
             <h1>Shopping cart</h1>
             <div class="goods-page">
-              <div class="goods-data clearfix">
-                <div class="table-wrapper-responsive">
-                <table summary="Shopping cart">
-                  <tr>
-                    <th class="goods-page-image">Image</th>
-                    <th class="goods-page-description">Description</th>
-                    <th class="goods-page-ref-no">Ref No</th>
-                    <th class="goods-page-quantity">Quantity</th>
-                    <th class="goods-page-price">Unit price</th>
-                    <th class="goods-page-total" colspan="2">Total</th>
-                  </tr>
-                  <tr>
-                    <td class="goods-page-image">
-                      <a href="javascript:;"><img src="assets/pages/img/products/model3.jpg" alt="Berry Lace Dress"></a>
-                    </td>
-                    <td class="goods-page-description">
-                      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
-                      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
-                      <em>More info is here</em>
-                    </td>
-                    <td class="goods-page-ref-no">
-                      javc2133
-                    </td>
-                    <td class="goods-page-quantity">
-                      <div class="product-quantity">
-                          <input id="product-quantity" type="text" value="1" readonly class="form-control input-sm">
-                      </div>
-                    </td>
-                    <td class="goods-page-price">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="goods-page-total">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="del-goods-col">
-                      <a class="del-goods" href="javascript:;">&nbsp;</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="goods-page-image">
-                      <a href="javascript:;"><img src="assets/pages/img/products/model4.jpg" alt="Berry Lace Dress"></a>
-                    </td>
-                    <td class="goods-page-description">
-                      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
-                      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
-                      <em>More info is here</em>
-                    </td>
-                    <td class="goods-page-ref-no">
-                      javc2133
-                    </td>
-                    <td class="goods-page-quantity">
-                      <div class="product-quantity">
-                          <input id="product-quantity2" type="text" value="1" readonly class="form-control input-sm">
-                      </div>
-                    </td>
-                    <td class="goods-page-price">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="goods-page-total">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="del-goods-col">
-                      <a class="del-goods" href="javascript:;">&nbsp;</a>
-                    </td>
-                  </tr>
-                </table>
-                </div>
+              <div id="conteiner-check" class="goods-data clearfix">
 
-                <div class="shopping-total">
-                  <ul>
-                    <li>
-                      <em>Sub total</em>
-                      <strong class="price"><span>$</span>47.00</strong>
-                    </li>
-                    <li>
-                      <em>Shipping cost</em>
-                      <strong class="price"><span>$</span>3.00</strong>
-                    </li>
-                    <li class="shopping-total-price">
-                      <em>Total</em>
-                      <strong class="price"><span>$</span>50.00</strong>
-                    </li>
-                  </ul>
-                </div>
               </div>
               <button class="btn btn-default" type="submit">Continue shopping <i class="fa fa-shopping-cart"></i></button>
               <button class="btn btn-primary" type="submit">Checkout <i class="fa fa-check"></i></button>
@@ -242,7 +150,7 @@
             <i class="fa fa-gift"></i>
             <div>
               <h2>Regalos diarios</h2>
-            
+
             </div>
             <span>&nbsp;</span>
           </div>
@@ -275,7 +183,7 @@
             <ul class="list-unstyled">
               <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Entrega</a></li>
               <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Servicio al cliente</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Cambios y devoluciones</a></li>    
+              <li><i class="fa fa-angle-right"></i> <a href="javascript:;">Cambios y devoluciones</a></li>
             </ul>
           </div>
           <!-- END INFO BLOCK -->
@@ -342,7 +250,7 @@
                     </div>
                   </div>
                   <div class="description">
-                    <p>Lorem ipsum dolor ut sit ame dolore  adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat 
+                    <p>Lorem ipsum dolor ut sit ame dolore  adipiscing elit, sed nonumy nibh sed euismod laoreet dolore magna aliquarm erat volutpat
 Nostrud duis molestie at dolore.</p>
                   </div>
                   <div class="product-page-options">
@@ -381,11 +289,11 @@ Nostrud duis molestie at dolore.</p>
     <!-- Load javascripts at bottom, this will reduce page load time -->
     <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
     <!--[if lt IE 9]>
-    <script src="assets/plugins/respond.min.js"></script>  
-    <![endif]-->  
+    <script src="assets/plugins/respond.min.js"></script>
+    <![endif]-->
     <script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="assets/corporate/scripts/back-to-top.js" type="text/javascript"></script>
     <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
     <!-- END CORE PLUGINS -->
@@ -402,7 +310,7 @@ Nostrud duis molestie at dolore.</p>
     <script src="assets/corporate/scripts/layout.js" type="text/javascript"></script>
     <script type="text/javascript">
         jQuery(document).ready(function() {
-            Layout.init();    
+            Layout.init();
             Layout.initOWL();
             Layout.initTwitter();
             Layout.initImageZoom();
@@ -412,6 +320,10 @@ Nostrud duis molestie at dolore.</p>
         });
     </script>
     <!-- END PAGE LEVEL JAVASCRIPTS -->
+    <script type="text/javascript" src="js/drawInHtml.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script type="text/javascript" src="js/checkout.js"></script>
+
 </body>
 <!-- END BODY -->
 </html>
