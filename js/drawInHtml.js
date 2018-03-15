@@ -59,7 +59,7 @@ const drawChekout = (products) => {
   <th class="goods-page-image">Imagen del producto</th>
   <th class="goods-page-description">Descripción</th>
   <th class="goods-page-ref-no">No Ref</th>
-  <th class="goods-page-quantity">Cantidad</th>
+  <th class="goods-page-quantity hidden">Cantidad</th>
   <th class="goods-page-price">Precio unitario</th>
   <th class="goods-page-total" colspan="2">Total</th>
   </tr>
@@ -68,12 +68,11 @@ const drawChekout = (products) => {
   <a href="javascript:;"><img src=${urlImg} alt=${name}></a>
   </td>
   <td class="goods-page-description">
-  <em>${name}</em>
+  <em><strong>${name}</strong></em>
   </td>
-  <td class="goods-page-ref-no">
-  ja${id}
+  <td class="goods-page-ref-no">${id}
   </td>
-  <td class="goods-page-quantity">
+  <td class="goods-page-quantity hidden">
   <div class="product-quantity">
   <div class="input-group bootstrap-touchspin input-group-sm"><span class="input-group-btn"><button class="btn quantity-down bootstrap-touchspin-down" type="button"><i class="fa fa-angle-down"></i></button></span><span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input id="product-quantity" type="text" value="1" readonly="" class="form-control input-sm control" style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span><span class="input-group-btn"><button class="btn quantity-up bootstrap-touchspin-up" type="button"><i class="fa fa-angle-up"></i></button></span></div>
   </div>
@@ -84,7 +83,7 @@ const drawChekout = (products) => {
   <td class="goods-page-total">
   <strong><span>$</span>${wholesalePrice} MXN</strong>
   </td>
-  <td class="del-goods-col">
+  <td class="del-goods-col hidden">
   <a class="del-goods" href="javascript:;">&nbsp;</a>
   </td>
   </tr>
@@ -138,11 +137,9 @@ const cartPop = (product) => {
                   <span class="cart-content-count">x 1</span>
                   <strong><a href="#">${name}</a></strong>
                   <em>$ ${price}</em>
-                  <a href="javascript:void(0);" class="del-goods">&nbsp;</a>
+                  <a href="javascript:void(0);" class="del-goods hidden">&nbsp;</a>
                 </li>
               </ul>
   `;
   return templateCartPop
 }//Fin de la función cartPop (product).
-
-

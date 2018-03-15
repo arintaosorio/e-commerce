@@ -73,8 +73,7 @@ function cartProductPop (array) {
   }
 
   let templateCartBtn = `<div class="text-right">
-<<<<<<< HEAD
-<a href="checkout.html" id="vaciar-carrito" class="btn btn-default">Vaciar Carrito</a>
+  <a id="vaciar" class="btn btn-primary">Vaciar carrito</a>
  </div>
 `;
   contentCart.innerHTML = templatePopComplet+templateCartBtn;
@@ -84,17 +83,6 @@ function cartProductPop (array) {
 
 
 
-/* ---- Funcion para vaciar Carrito ---- */
-const vaciarCarritoBtn = document.getElementById('vaciar-carrito'); 
-vaciarCarritoBtn.addEventListener('click', function vaciarLocalStorage() {
-  localStorage.clear();
-  let contentCart = document.querySelector('#cart');
-  contentCart.innerHTML="";
-});
-
-
-
-/* ---- Funcion para Pago de PAYPAL ---- */
 function payPal(total) {
   console.log(total);
   paypal.Button.render({
@@ -160,13 +148,11 @@ function getData(data) {
   printReceipt(data);
 }
 
-
-
-/* --------- Funcion para Comprobante de Pago PayPal ------- */
+/* ---- Funcion para Comprobante de Pago de Paypal -----*/
 function printReceipt(data) {
   console.log(data);
 
-  let containerPage = document.getElementById("conteiner-paypal");
+  // let containerPage = document.getElementById("conteiner-paypal");
   let templatePayPal = ``;
 
   let dataId = data.id;
@@ -189,32 +175,44 @@ function printReceipt(data) {
 
   let currency = data.transactions[0]["amount"].currency;
   console.log(currency);
+
+  let approved = data.state;
+  console.log(approved);
+  
  
   
-  templatePayPal = `<div class="shopping-total recibo">
-  <ul>
-    <li>
+  templatePayPal = `<div class="sale-product">
+  <h1>Comprobante de Pago</h1>
+    <div style="font-size:15px">
       <em>No.de Transaccion:</em>
-      <strong class="dataId"><span></span>${dataId}</strong>
-    </li>
-    <li>
-      <em>Cantidad:</em>
-      <strong class="price"><span>$</span>${totalAmount} ${currency}</strong>
-    </li>
-    <li>
+      <strong class="dataId" style="color:#FA7FA6"><span></span>${dataId}</strong>
+    </div>
+    <div style="font-size:15px">
+      <em >Cantidad:</em>
+      <strong class="price" style="color:#FA7FA6"><span>$</span>${totalAmount} ${currency}</strong>
+    </div>
+    <div style="font-size:15px">
       <em>Nombre:</em>
-      <strong class="price"><span></span>${firstName} ${lastName}</strong>
-    </li>
-    <li>
+      <strong class="price" style="color:#FA7FA6"><span></span>${firstName} ${lastName}</strong>
+    </div>
+    <div style="font-size:15px">
       <em>Fecha y Lugar de transaccion:</em>
-      <strong class="price"><span></span>${dataCreateTime}</strong>
-     <center> <strong class="price"><span></span>${state}</strong></center>
-    </li>
-  </ul>
+      <strong class="price"  style="color:#FA7FA6"><span></span>${dataCreateTime}</strong>
+     <center> <strong class="price2" style="color:#FA7FA6"><span></span>${state}</strong></center>
+    </div>
+    <div>
+    <strong class="price" style="color:#FA7FA6"><h2>${approved}</h2></strong>
+    </div>
 </div>
 `;
 
 
-containerPage.innerHTML = templatePayPal;
+// containerPage.innerHTML = templatePayPal;
+let containerPage = document.getElementById("cont-table-complete");
+ containerPage.innerHTML= "";
+ let finalContainer = document.createElement("div");
+ finalContainer.className = "col text-center";
+ finalContainer.innerHTML = templatePayPal;
+ containerPage.appendChild(finalContainer);
   
 }
