@@ -2,14 +2,14 @@
 function inicializarFirebase() {
 
     var config = {
-      apiKey: "AIzaSyC0Mm77qD91FvT1x4YWY_3NEtSx3Hkbh4c",
-      authDomain: "pruebas-3d15a.firebaseapp.com",
-      databaseURL: "https://pruebas-3d15a.firebaseio.com",
-      projectId: "pruebas-3d15a",
-      storageBucket: "pruebas-3d15a.appspot.com",
-      messagingSenderId: "437883428230"
-    };
-    firebase.initializeApp(config);
+        apiKey: "AIzaSyCwR9OlPt5Pa1AY_W8ag73arkSa_sZ8JZU",
+        authDomain: "e-commer.firebaseapp.com",
+        databaseURL: "https://e-commer.firebaseio.com",
+        projectId: "e-commer",
+        storageBucket: "e-commer.appspot.com",
+        messagingSenderId: "988965089361"
+      };
+      firebase.initializeApp(config);
   }
   
   var provider = new firebase.auth.GoogleAuthProvider();
@@ -38,8 +38,11 @@ function inicializarFirebase() {
     }
     firebase.database().ref("pruebas/" + user.uid)
       .set(usuario) //modifica la llave
-  
+      var usuarios = localStorage.getItem('usuario');
+      console.log(JSON.parse(usuarios));
+
   }
+
   
   /* ++++++++++++ Carga pagina ++++++++++ */
   window.load = inicializar;
