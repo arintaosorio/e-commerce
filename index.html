@@ -60,7 +60,7 @@
                 templeatComplet += templateOneProduct;
                 //console.log(templateOneProduct);
             }
-        console.log(templeatComplet);
+        // console.log(templeatComplet);
         let contentProducts = document.getElementById('container-products');//Elemento al que se le pintará la cuenta los productos agregados.
         contentProducts.innerHTML = templeatComplet;
         };
@@ -78,7 +78,18 @@
                         <li><a href="index.html">Mi cuenta</a></li>
 
                         <li><a id="checkout" href="checkout.html">Checkout</a></li>
-                        <li><a href="#">Iniciar Sesión</a></li>
+                        <li><a href="#"><button id="login">
+                          Iniciar con Google
+                        </button></a></li>
+                        <li>
+                          <a href="#">
+                            <div id="photo"></div>
+                          </a>
+                        </li>
+                        <li><a href="#"></a>
+                          <div id="email"></div>
+                          <div id="name"></div>
+                        </li>
                     </ul>
                 </div>
                 <!-- TOP MENU -->
@@ -86,6 +97,7 @@
         </div>
     </div>
     <!-- END TOP BAR -->
+   
 
     <!-- BEGIN HEADER -->
     <div class="header">
@@ -98,9 +110,7 @@
         <div class="top-cart-block">
           <div class="top-cart-info">
             <a id="counter-items" href="javascript:void(0);" class="top-cart-info-count">0</a>
-
-             <a id="total" href="javascript:void(0);" class="top-cart-info-value">$0</a>
-
+             <a id="total" href="javascript:void(0);" class="top-cart-info-value"></a>
           </div>
           <i class="fa fa-shopping-cart"></i>
 
@@ -108,9 +118,7 @@
             <div id="cart" class="top-cart-content">
 
               <div class="text-right">
-
-                <a id="clean-cart" href="#" class="btn btn-primary">Vaciar Carrito</a>
-
+                <a id="vaciar" class="btn btn-primary">Vaciar carrito</a>
               </div>
             </div>
           </div>
@@ -393,6 +401,26 @@
     <!--[if lt IE 9]>
     <script src="assets/plugins/respond.min.js"></script>
     <![endif]-->
+
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC0Mm77qD91FvT1x4YWY_3NEtSx3Hkbh4c",
+        authDomain: "pruebas-3d15a.firebaseapp.com",
+        databaseURL: "https://pruebas-3d15a.firebaseio.com",
+        projectId: "pruebas-3d15a",
+        storageBucket: "pruebas-3d15a.appspot.com",
+        messagingSenderId: "437883428230"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+
+
     <script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
     <script src="assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -417,6 +445,7 @@
         });
     </script>
     <!-- END PAGE LEVEL JAVASCRIPTS -->
+    <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/drawInHtml.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
     <script type="text/javascript" src="js/endpointMercadoLibre.js"></script>
