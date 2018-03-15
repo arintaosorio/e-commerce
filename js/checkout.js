@@ -216,3 +216,43 @@ let containerPage = document.getElementById("cont-table-complete");
  containerPage.appendChild(finalContainer);
   
 }
+
+
+
+/* ----- Funcion de autenticacion con firebase datos que se traen de archivo login.js ----*/
+
+function inicializarFirebase() {
+
+  var config = {
+      apiKey: "AIzaSyCwR9OlPt5Pa1AY_W8ag73arkSa_sZ8JZU",
+      authDomain: "e-commer.firebaseapp.com",
+      databaseURL: "https://e-commer.firebaseio.com",
+      projectId: "e-commer",
+      storageBucket: "e-commer.appspot.com",
+      messagingSenderId: "988965089361"
+    };
+    firebase.initializeApp(config);
+}
+
+$(document).ready(function(){
+  var usuarios = localStorage.getItem('usuario');
+  console.log(JSON.parse(usuarios));
+  usuarios = JSON.parse(usuarios); 
+  $("#name").text(usuarios.nombre);
+  $("#email").text(usuarios.email);
+
+
+  $("#logout").click(function(){
+      firebase.auth()
+        .signOut()
+        .then(function() {
+      window.location.href = "../index.html";
+    })
+    .catch(function(error){
+
+    });
+  });
+});
+
+
+
