@@ -1,6 +1,6 @@
 # FEMME
 
-![Tienda online](femme.jpg)
+![Tienda online](https://raw.githubusercontent.com/arintaosorio/e-commerce/master/femme.jpg)
 Este proyecto consiste en desarrollar una app e-commerce que sea SPA.
 En este proyecto se aplican los siguientes conceptos.
 -Templating
