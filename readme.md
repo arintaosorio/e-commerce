@@ -19,4 +19,5 @@ E-commerce FEMME es una app dirigida hacia la mujer, donde se emplea productos d
  
  ![Imagen](./assets/ecommerce.jpg)
 
+## Desarrollado para [Laboratoria](http://www.laboratoria.la/)
 
